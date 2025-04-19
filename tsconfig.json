@@ -1,0 +1,15 @@
+{
+  "compilerOptions": {
+    "target": "ESNext",
+    "moduleResolution": "node",
+    "allowJs": true,
+    "strict": true,
+    // "strictNullChecks": false,
+    "esModuleInterop": true,
+    "isolatedModules": true,
+  },
+  // "files": ["./src/main.ts"],
+  // "include": ["./src/**/*.ts"],
+  "include": ["./src"], // *.ts, *.d.ts, *.js (allowJS)
+  "exclude": ["./src/**/*.spec.ts"],
+}
