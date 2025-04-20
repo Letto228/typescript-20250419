@@ -86,3 +86,56 @@
 //         switchToPasue: () => ,
 //     }
 // }
+
+// type EntitySetters<Entity extends object> = {
+//     -readonly [Key in keyof Entity as `set${Capitalize<Key & string>}`]-?: (value: Entity[Key]) => void;
+// }
+
+// type EntityGetters<Entity extends object> = {
+//     -readonly [Key in keyof Entity as `get${Capitalize<Key & string>}`]-?: () => Entity[Key];
+// }
+
+// type CompleteEntity<Entity extends object> = Entity & EntityGetters<Entity> & EntitySetters<Entity>;
+
+// type CompleteMovie = CompleteEntity<Movie>;
+
+// type OptionalEntity<Entity extends object> = {
+//     [Key in keyof Entity]?: Entity[Key]
+// }
+
+// type ReadonlyEntity<Entity extends object> = {
+//     readonly [Key in keyof Entity]: Entity[Key]
+// }
+
+// type RequredEntity<Entity extends object> = {
+//     [Key in keyof Entity]-?: Entity[Key]
+// }
+
+// type EditableEntity<Entity extends object> = {
+//     -readonly [Key in keyof Entity]: Entity[Key]
+// }
+
+// type OptionalEntity<Entity extends object> = Partial<Entity>;
+
+// type ReadonlyEntity<Entity extends object> = Readonly<Entity>
+
+// type RequredEntity<Entity extends object> = Required<Entity>;
+
+// type EditableEntity<Entity extends object> = ...
+
+// type TestPick = Pick<Movie, 'awards' | 'director'>;
+// type TestOmit = Omit<Movie, 'awards' | 'director'>;
+
+// ------------------------------------------------------------
+
+// type UnionIntersection = (string | number | symbol) & string
+
+// ------------------------------------------------------------
+
+// type TransformedProperty = 'a' | 'b' | 'c';
+
+// type EntityFilter<Entity extends object, TransformedProperty extends keyof Entity> = {
+//     [Propery in keyof Entity as Propery & TransformedProperty]-?: Entity[Propery];
+// }
+
+// type TestEntityFilter = EntityFilter<{a: string, b: string, d: number, c: boolean}, TransformedProperty>
